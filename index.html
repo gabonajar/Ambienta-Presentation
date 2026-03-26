@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ambienta | Apple Aesthetic</title>
+<title>Ambienta | Premium Gold Aesthetic</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-/* Apple Presentation Dark Mode Aesthetics */
+/* Apple Presentation Premium Black & Gold Aesthetics */
 :root { 
-  --bg-color: #000000;
-  --card-bg: rgba(28, 28, 30, 0.7);
-  --glass-bg: rgba(40, 40, 43, 0.5);
-  --text-main: #f5f5f7;
-  --text-muted: #86868b;
-  --accent-blue: #0A84FF;
-  --accent-green: #32D74B;
-  --accent-orange: #FF9F0A;
-  --accent-purple: #BF5AF2;
+  --bg-color: #050505;
+  --card-bg: rgba(18, 18, 18, 0.85);
+  --glass-bg: rgba(25, 25, 25, 0.5);
+  --text-main: #FFFFFF;
+  --text-muted: #A0A0A0;
+  --gold-primary: #D4AF37;
+  --gold-light: #F9E596;
+  --gold-dark: #8C7326;
+  --gold-glow: rgba(212, 175, 55, 0.3);
+  --gold-hover: rgba(212, 175, 55, 0.6);
 }
 body, .reveal { 
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -43,107 +44,83 @@ body, .reveal {
 /* Layouts */
 .center-flex { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100vh; position: relative; z-index: 10;}
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; text-align: left; margin: auto 0;}
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: stretch; margin: auto 0;}
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: stretch;}
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; align-items: stretch; margin: auto 0;}
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; align-items: stretch;}
 
-/* Apple Style Cards */
+/* Premium Gold Cards */
 .apple-card { 
   background: var(--card-bg); 
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border-radius: 28px; 
   padding: 35px; 
   text-align: left;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease, border-color 0.5s ease;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
 }
-.apple-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 40px 80px rgba(0,0,0,0.8); }
-.apple-card h4 { font-size: 1.6rem; margin-bottom: 12px;}
-.apple-card p { font-size: 1.05rem; margin: 0; flex-grow: 1;}
-.icon-container { font-size: 2.5rem; margin-bottom: 25px; display: inline-block; filter: drop-shadow(0 0 10px currentColor); }
+.apple-card:hover { 
+  transform: translateY(-10px) scale(1.02); 
+  box-shadow: 0 30px 60px var(--gold-hover); 
+  border-color: var(--gold-light);
+}
+.apple-card h4 { font-size: 1.6rem; margin-bottom: 12px; color: var(--gold-light);}
+.apple-card p { font-size: 1.05rem; margin: 0; flex-grow: 1; color: var(--text-main);}
+.icon-container { font-size: 2.5rem; margin-bottom: 25px; display: inline-block; color: var(--gold-primary); filter: drop-shadow(0 0 15px var(--gold-glow)); }
 
 /* Gradients & Text Effects */
 .gradient-text {
-  background: linear-gradient(120deg, #ff9f0a, #ff375f, #bf5af2, #0a84ff);
+  background: linear-gradient(135deg, #F9E596 0%, #D4AF37 50%, #8C7326 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-}
-.gradient-text-green {
-  background: linear-gradient(120deg, #32d74b, #30b0c7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
 }
 
 /* Huge Stats */
-.stat-huge { font-size: 4.5rem; font-weight: 800; line-height: 1; letter-spacing: -0.05em; margin-bottom: 5px; color: var(--text-main);}
-.stat-label { font-size: 1.15rem; color: var(--text-muted); font-weight: 500;}
+.stat-huge { font-size: 4.5rem; font-weight: 800; line-height: 1; letter-spacing: -0.05em; margin-bottom: 5px; color: var(--gold-primary); filter: drop-shadow(0 0 10px var(--gold-glow));}
+.stat-label { font-size: 1.15rem; color: var(--text-main); font-weight: 500;}
 
 /* Ambient Glows */
 .glow-wrapper { position: absolute; width: 100vw; height: 100vh; top: 0; left: 0; overflow: hidden; pointer-events: none; z-index: -1; }
-.glow-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.4; mix-blend-mode: screen; animation: float 15s infinite ease-in-out alternate;}
-@keyframes float { 0% { transform: translateY(0) scale(1); } 50% { transform: translateY(-50px) scale(1.1); } 100% { transform: translateY(0) scale(1); } }
-.glow-blue { width: 700px; height: 700px; background: rgba(10, 132, 255, 0.3); top: -200px; right: -200px; animation-delay: 0s;}
-.glow-orange { width: 600px; height: 600px; background: rgba(255, 159, 10, 0.25); bottom: -150px; left: -150px; animation-delay: 5s;}
-.glow-green { width: 800px; height: 800px; background: rgba(50, 215, 75, 0.2); top: 50%; left: 50%; transform: translate(-50%, -50%); filter:blur(150px); animation-delay: 2s;}
+.glow-orb { position: absolute; border-radius: 50%; filter: blur(140px); opacity: 0.3; mix-blend-mode: screen; animation: float 20s infinite ease-in-out alternate;}
+@keyframes float { 0% { transform: translateY(0) scale(1); } 50% { transform: translateY(-30px) scale(1.05); } 100% { transform: translateY(0) scale(1); } }
+.glow-gold-1 { width: 800px; height: 800px; background: rgba(212, 175, 55, 0.2); top: -200px; right: -200px; animation-delay: 0s;}
+.glow-gold-2 { width: 700px; height: 700px; background: rgba(249, 229, 150, 0.15); bottom: -150px; left: -150px; animation-delay: 5s;}
+.glow-gold-center { width: 900px; height: 900px; background: rgba(140, 115, 38, 0.2); top: 50%; left: 50%; transform: translate(-50%, -50%); filter:blur(180px); animation-delay: 2s;}
 
 /* Interactive Before/After Slider */
-.ba-container { width: 100%; height: 65vh; position: relative; border-radius: 32px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.8); border: 2px solid rgba(255,255,255,0.1); user-select: none; }
-.img-before { width: 100%; height: 100%; object-fit: cover; position: absolute; top:0; left:0; filter: contrast(0.9) brightness(0.9); }
-.img-after-wrapper { width: 50%; height: 100%; position: absolute; top:0; left:0; overflow: hidden; border-right: 4px solid #fff; box-shadow: 5px 0 20px rgba(0,0,0,0.5); transition: width 0.1s; }
-.img-after { width: 200%; height: 100%; object-fit: cover; position: absolute; top:0; left:0; filter: contrast(1.1) brightness(1.05); }
+.ba-container { width: 100%; height: 65vh; position: relative; border-radius: 32px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 40px rgba(212,175,55,0.2); border: 2px solid var(--gold-dark); user-select: none; }
+.img-before { width: 100%; height: 100%; object-fit: cover; position: absolute; top:0; left:0; filter: contrast(0.9) brightness(0.8); }
+.img-after-wrapper { width: 50%; height: 100%; position: absolute; top:0; left:0; overflow: hidden; border-right: 4px solid var(--gold-primary); box-shadow: 5px 0 30px rgba(212,175,55,0.4); transition: width 0.1s; }
+/* Using high contrast beautifully lit image for after to simulate halloween vibe. Unsplash doesn't always have exact matches but it is a festive, orange/warmly decorated scene */
+.img-after { width: 200%; height: 100%; object-fit: cover; position: absolute; top:0; left:0; filter: contrast(1.15) brightness(1.1) saturate(1.2); }
 .slider-input { -webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; outline: none; margin: 0; z-index: 10; cursor: ew-resize;}
-.slider-input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 50px; height: 50px; background: url('data:image/svg+xml;utf8,<svg fill="black" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>') white center no-repeat; border-radius: 50%; cursor: ew-resize; box-shadow: 0 0 20px rgba(0,0,0,0.5); border: 3px solid #ff9f0a; pointer-events: auto;}
+.slider-input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 50px; height: 50px; background: url('data:image/svg+xml;utf8,<svg fill="%23FFFFFF" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>') var(--gold-primary) center no-repeat; border-radius: 50%; cursor: ew-resize; box-shadow: 0 0 25px var(--gold-glow); border: 2px solid #FFF; pointer-events: auto;}
 .ba-labels { position: absolute; width: 100%; top: 30px; padding: 0 40px; display: flex; justify-content: space-between; z-index: 5; pointer-events: none;}
-.ba-tag { background: rgba(0,0,0,0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 12px 25px; border-radius: 30px; font-weight: 700; font-size: 1.1rem; color: white; border: 1px solid rgba(255,255,255,0.2); letter-spacing: 1px; text-transform: uppercase;}
-
-/* CSS Mac Window Mockups (Validation) */
-.mac-window { background: var(--glass-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); width: 100%; height: auto; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.6); margin-top:20px; animation: popup 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity:0; transform: translateY(40px) scale(0.95);}
-@keyframes popup { to { opacity:1; transform: translateY(0) scale(1); } }
-
-.mac-header { background: rgba(0,0,0,0.4); padding: 12px 20px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.mac-dots { display: flex; gap: 8px; flex-shrink:0;}
-.dot { width: 12px; height: 12px; border-radius: 50%; }
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
-.mac-title { flex-grow: 1; text-align: center; font-size: 0.9rem; font-weight: 600; color: #aaa; margin-right: 40px; }
-.chat-container { padding: 25px; display: flex; flex-direction: column; gap: 15px; height: 350px; overflow-y: auto;}
-.chat-bubble { max-width: 85%; padding: 14px 20px; border-radius: 20px; font-size: 0.95rem; line-height: 1.4; font-weight:500;}
-.chat-bubble.left { align-self: flex-start; background: #0A66C2; color: white; border-bottom-left-radius: 4px; border: 1px solid rgba(255,255,255,0.1);}
-.chat-bubble.right { align-self: flex-end; background: #333; color: white; border-bottom-right-radius: 4px; border: 1px solid rgba(255,255,255,0.1);}
-
-/* Form Mockup */
-.form-mockup { background: white; border-radius: 12px; padding: 30px; text-align: left; }
-.form-header { height: 40px; background: rgba(52, 168, 83, 0.1); border-radius: 8px; margin-bottom: 25px; border-top: 6px solid #34a853;}
-.form-line { height: 15px; background: #f1f3f4; border-radius: 4px; margin-bottom: 15px; }
-.form-line.short { width: 60%; }
+.ba-tag { background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 12px 25px; border-radius: 30px; font-weight: 700; font-size: 1.1rem; color: var(--gold-light); border: 1px solid var(--gold-dark); letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 0 20px rgba(212,175,55,0.2);}
 
 /* Custom Reveal.js Overrides for Layout */
 .reveal .slides section { padding: 40px !important; height: 100%; display: flex; flex-direction: column; justify-content: center;}
-.reveal .progress { height: 4px; color: var(--accent-blue); }
-.reveal .controls { color: rgba(255,255,255,0.3); }
+.reveal .progress { height: 4px; color: var(--gold-primary); }
+.reveal .controls { color: rgba(212,175,55,0.5); }
 
 /* P&L Table */
 .fin-table { width: 100%; border-collapse: collapse; font-size: 1.1rem; }
-.fin-table th { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 18px 10px; text-align: right; color: var(--text-muted); font-weight: 500;}
+.fin-table th { border-bottom: 1px solid rgba(212,175,55,0.3); padding: 18px 10px; text-align: right; color: var(--gold-light); font-weight: 500;}
 .fin-table td { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 18px 10px; text-align: right; color: var(--text-main); font-weight: 600;}
 .fin-table th:first-child, .fin-table td:first-child { text-align: left; }
-.fin-table td.profit { color: var(--accent-green); font-weight: 800; font-size: 1.3rem; }
+.fin-table td.profit { color: var(--gold-primary); font-weight: 800; font-size: 1.3rem; text-shadow: 0 0 10px rgba(212,175,55,0.3);}
 
 /* Iteration Boxes */
 .iteration-row { display: flex; flex-direction: column; gap: 25px; margin-top:20px; width: 100%;}
-.iteration-item { background: var(--glass-bg); border-radius: 20px; padding: 30px; display: flex; align-items: center; gap: 30px; border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(15px); transition: all 0.3s;}
-.iteration-item:hover { background: rgba(60,60,65,0.6); transform: scale(1.01); }
-.it-num { background: rgba(255,255,255,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 800; color: white; flex-shrink: 0;}
-.it-num.blue { color: var(--accent-blue);}
-.it-num.green { color: var(--accent-green);}
-.it-num.orange { color: var(--accent-orange);}
+.iteration-item { background: var(--glass-bg); border-radius: 20px; padding: 30px; display: flex; align-items: center; gap: 30px; border: 1px solid rgba(212,175,55,0.15); backdrop-filter: blur(15px); transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);}
+.iteration-item:hover { background: rgba(30,30,30,0.8); transform: scale(1.02); box-shadow: 0 20px 40px var(--gold-glow); border-color: var(--gold-primary);}
+.it-num { background: rgba(212,175,55,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 800; color: var(--gold-primary); flex-shrink: 0; box-shadow: inset 0 0 15px rgba(212,175,55,0.3), 0 0 15px rgba(212,175,55,0.2); border: 1px solid var(--gold-dark);}
 
 /* Small specific overrides */
 html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
@@ -151,11 +128,11 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
 </head>
 <body>
 
-<!-- Ambient Glows across the whole presentation -->
+<!-- Ambient Gold Glows across the whole presentation -->
 <div class="glow-wrapper">
-  <div class="glow-orb glow-blue"></div>
-  <div class="glow-orb glow-orange"></div>
-  <div class="glow-orb glow-green"></div>
+  <div class="glow-orb glow-gold-1"></div>
+  <div class="glow-orb glow-gold-2"></div>
+  <div class="glow-orb glow-gold-center"></div>
 </div>
 
 <div class="reveal">
@@ -164,29 +141,29 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
     <!-- 1. Intro -->
     <section>
       <div class="center-flex">
-        <h1 class="gradient-text" style="font-size: 8rem; margin-bottom: 20px;">Ambienta.</h1>
-        <h2 style="font-size: 3rem; color: var(--text-main); font-weight: 600; margin-bottom: 30px; line-height: 1.1;">Where spaces<br>become experiences.</h2>
-        <p style="font-size: 1.6rem; max-width: 700px; margin: 0 auto;">Transforming professional environments<br>with sustainable, full-service decoration.</p>
+        <h1 class="gradient-text" style="font-size: 9rem; margin-bottom: 10px;">Ambienta.</h1>
+        <h2 style="font-size: 3rem; color: var(--text-main); font-weight: 400; margin-bottom: 30px; line-height: 1.1;">Where spaces<br>become experiences.</h2>
+        <p style="font-size: 1.6rem; max-width: 700px; margin: 0 auto; color: var(--gold-light);">Transforming professional environments<br>with sustainable, full-service decoration.</p>
       </div>
     </section>
 
     <!-- 2. Before / After Slider -->
     <section>
       <h2 style="text-align: left; margin-bottom: 10px;">The Transformation.</h2>
-      <p style="text-align: left; margin-bottom: 40px; font-size: 1.5rem;">Drag the slider to experience the impact of Ambienta.</p>
+      <p style="text-align: left; margin-bottom: 40px; font-size: 1.5rem;">Drag the slider to experience the impact of a Halloween Ambienta installation.</p>
       
       <div class="ba-container">
-        <!-- Before image (cold corporate) -->
-        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&w=1920" class="img-before" draggable="false">
+        <!-- Before image (cold corporate hotel lobby) -->
+        <img src="https://images.unsplash.com/photo-1542314831-c6a4d14eff43?auto=format&w=1920" class="img-before" draggable="false">
         
-        <!-- After image wrapper (warm decorated) -->
+        <!-- After image wrapper (Halloween decorated interior) -->
         <div class="img-after-wrapper" id="afterWrapper">
-          <img src="https://images.unsplash.com/photo-1556910103-1c02745a872f?auto=format&w=1920" class="img-after" id="afterImage" draggable="false">
+          <img src="https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&w=1920" class="img-after" id="afterImage" draggable="false">
         </div>
         
         <div class="ba-labels">
-          <span class="ba-tag">Before: Function-only</span>
-          <span class="ba-tag" style="background: rgba(50, 215, 75, 0.4); border-color: rgba(50,215,75,0.8);">After: Experiential Decor</span>
+          <span class="ba-tag">Un-decorated Lobby</span>
+          <span class="ba-tag" style="background: rgba(212,175,55, 0.4); border-color: rgba(212,175,55,0.8);">Halloween Transformation</span>
         </div>
         
         <input type="range" class="slider-input" id="baSlider" min="0" max="100" value="50">
@@ -200,17 +177,17 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
         <p style="text-align: left; margin-bottom: 50px; font-size: 1.5rem; max-width: 800px;">Professional spaces are functional, but lack emotion. Managing them in-house creates severe operational drag.</p>
         <div class="grid-3" style="width: 100%;">
           <div class="apple-card fragment slide-up">
-            <div class="icon-container" style="color: #ff3b30;"><i class="fa-regular fa-snowflake"></i></div>
+            <div class="icon-container"><i class="fa-regular fa-snowflake"></i></div>
             <h4>Cold & Impersonal</h4>
             <p>Standard functional design feels heavy, sterile, and distant to visitors and employees.</p>
           </div>
           <div class="apple-card fragment slide-up" data-fragment-index="1">
-            <div class="icon-container" style="color: #ff9f0a;"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <div class="icon-container"><i class="fa-solid fa-boxes-stacked"></i></div>
             <h4>Operational Burden</h4>
             <p>Decorating requires excessive time, deep storage, and specialized creative teams.</p>
           </div>
           <div class="apple-card fragment slide-up" data-fragment-index="2">
-            <div class="icon-container" style="color: #ff375f;"><i class="fa-solid fa-trash-can"></i></div>
+            <div class="icon-container"><i class="fa-solid fa-trash-can"></i></div>
             <h4>Material Waste</h4>
             <p>Decorations are bought once, forgotten, and ultimately dumped into landfills.</p>
           </div>
@@ -226,17 +203,17 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
         
         <div class="grid-3" style="width: 100%;">
           <div class="apple-card fragment">
-            <div class="icon-container" style="color: var(--accent-blue);"><i class="fa-solid fa-palette"></i></div>
+            <div class="icon-container"><i class="fa-solid fa-palette"></i></div>
             <h4 style="font-size: 1.8rem; margin-bottom: 15px;">Creative Design</h4>
             <p style="font-size: 1.15rem;">Thematic and seasonal spatial rotations designed specifically to mirror your premium brand identity.</p>
           </div>
           <div class="apple-card fragment">
-            <div class="icon-container" style="color: var(--accent-purple);"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div class="icon-container"><i class="fa-solid fa-truck-ramp-box"></i></div>
             <h4 style="font-size: 1.8rem; margin-bottom: 15px;">Full Service</h4>
             <p style="font-size: 1.15rem;">We handle the installation, logistics, setup, takedown, and year-round offsite storage.</p>
           </div>
           <div class="apple-card fragment">
-            <div class="icon-container" style="color: var(--accent-green);"><i class="fa-solid fa-leaf"></i></div>
+            <div class="icon-container"><i class="fa-solid fa-leaf"></i></div>
             <h4 style="font-size: 1.8rem; margin-bottom: 15px;">Circular Economy</h4>
             <p style="font-size: 1.15rem;">Sustainable reuse of high-level decorative assets across our extensive B2B network.</p>
           </div>
@@ -247,45 +224,35 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
     <!-- 5. Value Proposition Statement -->
     <section>
       <div class="center-flex">
-        <h1 style="font-size: 4rem; line-height: 1.25; text-align:center; max-width: 1100px; letter-spacing: -0.03em; font-weight: 700;">
+        <h1 style="font-size: 4.5rem; line-height: 1.25; text-align:center; max-width: 1100px; letter-spacing: -0.03em; font-weight: 700;">
           "For businesses that want to create welcoming environments, Ambienta provides <span class="gradient-text" style="font-weight: 800;">professional seasonal decoration services</span> designed to transform everyday spaces."
         </h1>
       </div>
     </section>
 
-    <!-- 6. Validation Methods (LinkedIn / Forms Mockups) -->
+    <!-- 6. Validation Methods (Exact Image Implementation) -->
     <section>
       <div class="center-flex" style="align-items: flex-start; height: 100%;">
         <h2 style="text-align: left; margin-bottom: 10px;">Validation via Outreach.</h2>
-        <p style="text-align: left; margin-bottom: 30px; font-size: 1.5rem;">Targeting hotel and office managers directly via LinkedIn to confirm actual market pain points.</p>
+        <p style="text-align: left; margin-bottom: 40px; font-size: 1.5rem; color: var(--gold-light);">Targeting hotel/office managers directly via LinkedIn to confirm actual market pain points.</p>
         
         <div class="grid-2" style="width: 100%; align-items: stretch; gap: 50px;">
           <!-- Left: The Methodology -->
-          <div style="display:flex; flex-direction:column; gap:25px; justify-content: center;">
+          <div style="display:flex; flex-direction:column; gap:35px; justify-content: center;">
             <div class="apple-card fragment fade-right">
-              <h4 style="font-size: 2rem; margin-bottom: 10px;"><i class="fa-brands fa-linkedin" style="color:#0a66c2; margin-right: 15px;"></i> Direct Discovery</h4>
-              <p style="font-size: 1.1rem; color: #bbb;">Direct messaging to DMs in hospitality and healthcare to bypass gatekeepers and get real responses.</p>
+              <h4 style="font-size: 2rem; margin-bottom: 10px;"><i class="fa-brands fa-linkedin" style="color:var(--gold-primary); margin-right: 15px;"></i> Direct Discovery</h4>
+              <p style="font-size: 1.1rem; color: var(--text-main);">Direct messaging to DMs in hospitality and healthcare to bypass gatekeepers and get real responses.</p>
             </div>
             <div class="apple-card fragment fade-right" data-fragment-index="1">
-              <h4 style="font-size: 2rem; margin-bottom: 10px;"><i class="fa-brands fa-google" style="color:#34a853; margin-right: 15px;"></i> Metric Gathering</h4>
-              <p style="font-size: 1.1rem; color: #bbb;">Structured surveys distributed through the LinkedIn network to collect quantitative data on budgets and operational needs.</p>
+              <h4 style="font-size: 2rem; margin-bottom: 10px;"><i class="fa-brands fa-google" style="color:var(--gold-primary); margin-right: 15px;"></i> Metric Gathering</h4>
+              <p style="font-size: 1.1rem; color: var(--text-main);">Structured surveys distributed through the exact same network to collect quantitative data on budgets and operational needs.</p>
             </div>
           </div>
           
-          <!-- Right: Interactive CSS Mockups of the Screenshots -->
-          <div style="position: relative; display: flex; flex-direction: column; gap: 20px;">
-            <!-- LinkedIn Mockup Window -->
-            <div class="mac-window fragment fade-left" style="animation-delay: 0.2s;">
-              <div class="mac-header">
-                <div class="mac-dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                <div class="mac-title">LinkedIn Connection</div>
-              </div>
-              <div class="chat-container">
-                <div class="chat-bubble left">Hi <span style="font-weight:700;">Daniel Corral Gómez</span>, I came across your profile and thought you'd be a great person to speak to!</div>
-                <div class="chat-bubble left" style="animation-delay: 0.4s; opacity: 0; animation: popup 0.5s forwards;">I'm a student developing Ambienta — a professional decoration service for offices and shared workspaces.</div>
-                <div class="chat-bubble right" style="background:#555; animation-delay: 1.2s; opacity: 0; animation: popup 0.5s forwards;">Hi Oscar. We actually struggle with storage for our lobby Christmas trees every year. Send the link!</div>
-              </div>
-            </div>
+          <!-- Right: User's LinkedIn Screenshot -->
+          <div class="apple-card fragment fade-left" style="display: flex; justify-content: center; align-items: center; padding: 20px; overflow: hidden;">
+            <!-- IMPORTANT: User must save their image as 'linkedin-evidence.jpg' in the folder -->
+            <img src="linkedin-evidence.jpg" alt="LinkedIn Evidence" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 40px var(--gold-glow);">
           </div>
         </div>
       </div>
@@ -297,102 +264,101 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
         <h2 style="text-align: left; margin-bottom: 40px;">The Data Told Us.</h2>
         <div class="grid-2" style="width: 100%; gap: 60px;">
           <!-- Stats -->
-          <div style="display:flex; flex-direction: column; gap:20px;">
-            <div class="apple-card" style="display:flex; align-items:center; gap:30px; padding:20px 40px; background: rgba(10, 132, 255, 0.1); border: 1px solid rgba(10, 132, 255, 0.3);">
-               <div class="stat-huge" style="margin:0; width:140px; color:var(--accent-blue);">75%</div>
-               <div class="stat-label">of spaces are currently decorated</div>
+          <div style="display:flex; flex-direction: column; gap:25px;">
+            <div class="apple-card" style="display:flex; align-items:center; gap:30px; padding:25px 40px;">
+               <div class="stat-huge" style="margin:0; width:140px;">75%</div>
+               <div class="stat-label" style="font-size: 1.3rem;">of spaces are currently decorated</div>
             </div>
-            <div class="apple-card" style="display:flex; align-items:center; gap:30px; padding:20px 40px; background: rgba(255, 159, 10, 0.1); border: 1px solid rgba(255, 159, 10, 0.3);">
-               <div class="stat-huge" style="margin:0; width:140px; color:var(--accent-orange);">2.4</div>
-               <div class="stat-label">Avg. satisfaction out of 5 is terrible</div>
+            <div class="apple-card" style="display:flex; align-items:center; gap:30px; padding:25px 40px;">
+               <div class="stat-huge" style="margin:0; width:140px;">2.4</div>
+               <div class="stat-label" style="font-size: 1.3rem;">Avg. satisfaction out of 5 is terrible</div>
             </div>
-            <div class="apple-card" style="display:flex; align-items:center; gap:30px; padding:20px 40px; background: rgba(50, 215, 75, 0.1); border: 1px solid rgba(50, 215, 75, 0.3);">
-               <div class="stat-huge" style="margin:0; width:140px; color:var(--accent-green);">83%</div>
-               <div class="stat-label">Require higher sustainability</div>
+            <div class="apple-card" style="display:flex; align-items:center; gap:30px; padding:25px 40px;">
+               <div class="stat-huge" style="margin:0; width:140px;">83%</div>
+               <div class="stat-label" style="font-size: 1.3rem;">Require much higher sustainability</div>
             </div>
           </div>
           
           <!-- Written Insights -->
           <div style="display: flex; flex-direction: column; justify-content: center; gap: 40px;">
             <div class="fragment slide-up">
-              <h4 style="color:white; font-size:1.6rem; margin-bottom:10px;"><i class="fa-solid fa-clock" style="color:var(--text-muted); margin-right: 15px;"></i> Extreme Time Constraints</h4>
-              <p style="font-size: 1.2rem; color: #bbb;">Professionals completely lack the time to execute sweeping seasonal decorations.</p>
+              <h4 style="color:var(--gold-primary); font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-clock" style="margin-right: 15px;"></i> Extreme Time Constraints</h4>
+              <p style="font-size: 1.3rem; color: var(--text-main);">Professionals completely lack the time to execute sweeping seasonal decorations.</p>
             </div>
             <div class="fragment slide-up">
-              <h4 style="color:white; font-size:1.6rem; margin-bottom:10px;"><i class="fa-solid fa-warehouse" style="color:var(--text-muted); margin-right: 15px;"></i> Storage Limitations</h4>
-              <p style="font-size: 1.2rem; color: #bbb;">Businesses cannot safely or affordably store materials during off-seasons.</p>
+              <h4 style="color:var(--gold-primary); font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-warehouse" style="margin-right: 15px;"></i> Storage Limitations</h4>
+              <p style="font-size: 1.3rem; color: var(--text-main);">Businesses cannot safely or affordably store materials during off-seasons.</p>
             </div>
             <div class="fragment slide-up">
-              <h4 style="color:var(--accent-green); font-size:1.6rem; margin-bottom:10px;"><i class="fa-solid fa-leaf" style="color:var(--accent-green); margin-right: 15px;"></i> Sustainability is Mandatory</h4>
-              <p style="font-size: 1.2rem; color: #bbb;">Purchasing disposable items annually is no longer acceptable for modern corporate ESG mandates.</p>
+              <h4 style="color:var(--gold-primary); font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-leaf" style="margin-right: 15px;"></i> Sustainability is Mandatory</h4>
+              <p style="font-size: 1.3rem; color: var(--text-main);">Purchasing disposable items annually is no longer acceptable for modern corporate ESG mandates.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. Validation Driven Iterations (Apple List View) -->
+    <!-- 8. Validation Driven Iterations -->
     <section>
       <div class="center-flex" style="align-items: flex-start; height: 100%;">
-        <h2 style="text-align: left; margin-bottom: 10px;">Iterating from Feedback.</h2>
-        <p style="text-align: left; margin-bottom: 30px; font-size: 1.5rem;">Three pivotal changes implemented to transition Ambienta into a highly scalable model.</p>
+        <h2 style="text-align: left; margin-bottom: 20px;">Iterating from Feedback.</h2>
+        <p style="text-align: left; margin-bottom: 40px; font-size: 1.5rem;">Three pivotal changes implemented to transition Ambienta into a highly scalable model.</p>
         
         <div class="iteration-row">
           <!-- Iteration 1 -->
           <div class="iteration-item fragment slide-up">
-            <div class="it-num blue">1</div>
+            <div class="it-num">1</div>
             <div style="flex:1;">
-              <h4 style="color:var(--text-main); font-size:1.5rem; margin-bottom:10px;">Pricing Flexibility</h4>
-              <p>Moved from an inflexible fixed annual subscription default towards a <strong style="color:var(--accent-blue);">Per-SQM Pricing engine</strong>. Lowered entry threshold.</p>
+              <h4 style="font-size:1.6rem; margin-bottom:10px;">Pricing Flexibility</h4>
+              <p style="font-size:1.2rem; color:var(--text-main);">Moved from an inflexible fixed annual subscription default towards a <strong style="color:var(--gold-light);">Per-SQM Pricing engine</strong>. Lowered entry threshold.</p>
             </div>
           </div>
 
           <!-- Iteration 2 -->
           <div class="iteration-item fragment slide-up" data-fragment-index="1">
-            <div class="it-num green">2</div>
+            <div class="it-num">2</div>
             <div style="flex:1;">
-              <h4 style="color:var(--text-main); font-size:1.5rem; margin-bottom:10px;">Sustainability as the Core</h4>
-              <p>Elevated circular asset ecosystems. <strong style="color:var(--accent-green);">Sustainable reuse </strong> became our primary value driver, heavily resonating with Fortune 500s.</p>
+              <h4 style="font-size:1.6rem; margin-bottom:10px;">Sustainability as the Core</h4>
+              <p style="font-size:1.2rem; color:var(--text-main);">Elevated circular asset ecosystems. <strong style="color:var(--gold-light);">Sustainable reuse </strong> became our primary value driver, heavily resonating with Fortune 500s.</p>
             </div>
           </div>
 
           <!-- Iteration 3 -->
           <div class="iteration-item fragment slide-up" data-fragment-index="2">
-            <div class="it-num orange">3</div>
+            <div class="it-num">3</div>
             <div style="flex:1;">
-              <h4 style="color:var(--text-main); font-size:1.5rem; margin-bottom:10px;">Custom Onboarding</h4>
-              <p>Removed fears of "generic corporate setups". A deep-dive spatial brand analysis became a <strong style="color:var(--accent-orange);">built-in mandatory service feature</strong>.</p>
+              <h4 style="font-size:1.6rem; margin-bottom:10px;">Custom Onboarding</h4>
+              <p style="font-size:1.2rem; color:var(--text-main);">Removed fears of "generic corporate setups". A deep-dive spatial brand analysis became a <strong style="color:var(--gold-light);">built-in mandatory service feature</strong>.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 9. Customer Segments (Updated image for education) -->
+    <!-- 9. Customer Segments -->
     <section>
       <div class="center-flex" style="align-items: flex-start; height: 100%;">
         <h2 style="text-align: left; margin-bottom: 40px;">Target Demographics.</h2>
         <div class="grid-4" style="width: 100%; height: 60vh;">
-          <div class="apple-card fragment" style="padding: 20px;">
-            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&w=600" style="width:100%; border-radius:18px; margin-bottom:20px; height: 180px; object-fit: cover;">
-            <h4 style="color:var(--accent-blue); font-size:1.6rem;">Hospitality</h4>
-            <p style="font-size:1rem; color:#ccc;">Hotels focused entirely on visitor engagement and 5-star premium atmospheres.</p>
+          <div class="apple-card fragment" style="padding: 25px;">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&w=600" style="width:100%; border-radius:18px; margin-bottom:20px; height: 180px; object-fit: cover; opacity: 0.9;">
+            <h4 style="font-size:1.6rem;">Hospitality</h4>
+            <p style="font-size:1rem;">Hotels focused entirely on visitor engagement and 5-star premium atmospheres.</p>
           </div>
           <div class="apple-card fragment">
-            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&w=600" style="width:100%; border-radius:18px; margin-bottom:20px; height: 180px; object-fit: cover;">
-            <h4 style="color:var(--accent-green); font-size:1.6rem;">Healthcare</h4>
-            <p style="font-size:1rem; color:#ccc;">Clinics lifting intense emotional barriers to calm and relax incoming patients.</p>
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&w=600" style="width:100%; border-radius:18px; margin-bottom:20px; height: 180px; object-fit: cover; opacity: 0.9;">
+            <h4 style="font-size:1.6rem;">Healthcare</h4>
+            <p style="font-size:1rem;">Clinics lifting intense emotional barriers to calm and relax incoming patients.</p>
           </div>
           <div class="apple-card fragment">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&w=600" style="width:100%; border-radius:18px; margin-bottom:20px; height: 180px; object-fit: cover;">
-            <h4 style="color:var(--accent-orange); font-size:1.6rem;">Corporate</h4>
-            <p style="font-size:1rem; color:#ccc;">Tech offices utilizing interior decor to vastly enhance employee culture.</p>
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&w=600" style="width:100%; border-radius:18px; margin-bottom:20px; height: 180px; object-fit: cover; opacity: 0.9;">
+            <h4 style="font-size:1.6rem;">Corporate</h4>
+            <p style="font-size:1rem;">Tech offices utilizing interior decor to vastly enhance employee culture.</p>
           </div>
           <div class="apple-card fragment">
-            <!-- Fixed Education Image Link -->
-            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&w=600" style="width:100%; border-radius:18px; margin-bottom:20px; height: 180px; object-fit: cover;">
-            <h4 style="color:var(--accent-purple); font-size:1.6rem;">Education</h4>
-            <p style="font-size:1rem; color:#ccc;">Universities requiring rapid, massive decorative setups for graduations.</p>
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&w=600" style="width:100%; border-radius:18px; margin-bottom:20px; height: 180px; object-fit: cover; opacity: 0.9;">
+            <h4 style="font-size:1.6rem;">Education</h4>
+            <p style="font-size:1rem;">Universities requiring rapid, massive decorative setups for graduations.</p>
           </div>
         </div>
       </div>
@@ -404,25 +370,25 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
         <div class="grid-2" style="width: 100%; height: 100%;">
           <div style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
             <h2 style="text-align: left; margin-bottom: 20px;">The Revenue Engine.</h2>
-            <p style="text-align: left; font-size: 1.4rem; margin-bottom: 40px;">Transparent, fully scalable pricing based purely on footprints. The client knows exactly what they pay.</p>
-            <div class="apple-card" style="background:rgba(10, 132, 255, 0.15); border:2px solid var(--accent-blue); backdrop-filter: none;">
-              <div class="stat-huge" style="color:white; font-size: 5rem;">€35 <span style="font-size:1.5rem; color:var(--accent-blue);">/ SQM</span></div>
-              <p style="color:var(--text-main); font-size: 1.2rem; margin-top:10px;">Example: A standard 250m² hotel lobby generates a €8,750 core project volume.</p>
+            <p style="text-align: left; font-size: 1.4rem; margin-bottom: 40px; color: var(--text-main);">Transparent, fully scalable pricing based purely on footprints. The client knows exactly what they pay.</p>
+            <div class="apple-card" style="background:rgba(212, 175, 55, 0.15); border:2px solid var(--gold-primary); backdrop-filter: none; box-shadow: 0 0 40px var(--gold-glow);">
+              <div class="stat-huge" style="color:var(--gold-light); font-size: 5rem; margin-bottom:10px;">€35 <span style="font-size:1.5rem; color:var(--text-main);">/ SQM</span></div>
+              <p style="color:var(--text-main); font-size: 1.2rem;">Example: A standard 250m² hotel lobby generates a €8,750 core project volume.</p>
             </div>
           </div>
           
           <div style="display: flex; flex-direction: column; justify-content: center; gap: 30px;">
             <div class="apple-card fragment slide-up">
-              <h4 style="color:var(--text-main); font-size:1.8rem;"><i class="fa-solid fa-layer-group" style="margin-right:15px; color:var(--text-muted);"></i> Core Transformations</h4>
-              <p style="font-size:1.1rem; color:#bbb;">Design, installation, removal, and secure off-site climate storage.</p>
+              <h4 style="color:var(--gold-light); font-size:1.8rem;"><i class="fa-solid fa-layer-group" style="margin-right:15px; color:var(--gold-dark);"></i> Core Transformations</h4>
+              <p style="font-size:1.1rem;">Design, installation, removal, and secure off-site climate storage.</p>
             </div>
             <div class="apple-card fragment slide-up">
-              <h4 style="color:var(--text-main); font-size:1.8rem;"><i class="fa-solid fa-hammer" style="margin-right:15px; color:var(--text-muted);"></i> Custom Setup Up-Sells</h4>
-              <p style="font-size:1.1rem; color:#bbb;">Bespoke high-end installations yielding €500-€1500 additional margins per project.</p>
+              <h4 style="color:var(--gold-light); font-size:1.8rem;"><i class="fa-solid fa-hammer" style="margin-right:15px; color:var(--gold-dark);"></i> Custom Setup Up-Sells</h4>
+              <p style="font-size:1.1rem;">Bespoke high-end installations yielding €500-€1500 additional margins per project.</p>
             </div>
             <div class="apple-card fragment slide-up">
-              <h4 style="color:var(--text-main); font-size:1.8rem;"><i class="fa-solid fa-sync" style="margin-right:15px; color:var(--accent-green);"></i> Continual Contracts</h4>
-              <p style="font-size:1.1rem; color:#bbb;">Quarterly seasonal recurrence secures long-term predictable cash flow.</p>
+              <h4 style="color:var(--gold-light); font-size:1.8rem;"><i class="fa-solid fa-sync" style="margin-right:15px; color:var(--gold-dark);"></i> Continual Contracts</h4>
+              <p style="font-size:1.1rem;">Quarterly seasonal recurrence secures long-term predictable cash flow.</p>
             </div>
           </div>
         </div>
@@ -442,7 +408,7 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
               <tr><td>Core rate scale</td><td>€35 / m²</td></tr>
               <tr><td>Core revenue volume</td><td>€8,750</td></tr>
               <tr><td>High-margin Add-ons</td><td>€1,000</td></tr>
-              <tr class="highlight"><td style="color:white; font-size:1.4rem;">Total Gross per Project</td><td style="color:var(--accent-blue); font-size:1.4rem; font-weight:800;">€9,750</td></tr>
+              <tr class="highlight"><td style="color:var(--gold-light); font-size:1.4rem;">Total Gross per Project</td><td style="color:var(--gold-primary); font-size:1.4rem; font-weight:800;">€9,750</td></tr>
             </table>
           </div>
 
@@ -459,7 +425,7 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
               <tr><td>Year 2</td><td>€819k</td><td>€316k</td><td class="profit">€502,600</td></tr>
               <tr><td>Year 3</td><td>€1.17M</td><td>€454k</td><td class="profit" style="font-size:1.5rem;">€716,000</td></tr>
             </table>
-            <p style="text-align:center; font-size:1rem; margin-top:30px; color:var(--text-muted);">Required Bootstrapped Capital: €65,000 (Founders + Angel)</p>
+            <p style="text-align:center; font-size:1rem; margin-top:30px; color:var(--gold-dark);">Required Bootstrapped Capital: €65,000 (Founders + Angel)</p>
           </div>
 
         </div>
@@ -476,16 +442,16 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
             <div style="height:350px; width:100%; position:relative;">
               <canvas id="cogsChart"></canvas>
               <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center;">
-                <span style="font-size:2rem; font-weight:800; color:white;">€1.6k</span><br>
-                <span style="font-size:1rem; color:#888; font-weight:600;">Total COGS</span>
+                <span style="font-size:2rem; font-weight:800; color:var(--gold-light);">€1.6k</span><br>
+                <span style="font-size:1rem; color:var(--text-main); font-weight:600;">Total COGS</span>
               </div>
             </div>
           </div>
           <div class="apple-card fragment" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
-            <h4 style="font-size:2.2rem; margin-bottom:10px; color:var(--accent-green);">Rapid Break-Even Point</h4>
-            <p style="margin-bottom:40px; font-size: 1.2rem;">Total threshold to cover €11,000 fixed monthly OPEX.</p>
-            <h1 class="gradient-text-green" style="font-size: 10rem; margin:0; line-height:1; font-weight:900;">1.5</h1>
-            <p style="font-size:1.5rem; font-weight:700; color:white; margin-top:20px;">Projects per Month</p>
+            <h4 style="font-size:2.2rem; margin-bottom:10px; color:var(--gold-primary);">Rapid Break-Even Point</h4>
+            <p style="margin-bottom:40px; font-size: 1.2rem; color: var(--text-main);">Total threshold to cover €11,000 fixed monthly OPEX.</p>
+            <h1 class="gradient-text" style="font-size: 10rem; margin:0; line-height:1; font-weight:900;">1.5</h1>
+            <p style="font-size:1.5rem; font-weight:700; color:var(--gold-light); margin-top:20px;">Projects per Month</p>
           </div>
         </div>
       </div>
@@ -494,8 +460,8 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
     <!-- 13. End -->
     <section>
       <div class="center-flex">
-        <h1 class="gradient-text" style="font-size: 8rem; margin-bottom: 30px;">Ambienta.</h1>
-        <h3 style="font-size: 2.5rem; color: var(--text-muted); font-weight: 500; letter-spacing: 2px;">Thank you.</h3>
+        <h1 class="gradient-text" style="font-size: 9rem; margin-bottom: 30px;">Ambienta.</h1>
+        <h3 style="font-size: 2.5rem; color: var(--gold-light); font-weight: 500; letter-spacing: 2px;">Thank you.</h3>
       </div>
     </section>
 
@@ -507,15 +473,15 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
   Reveal.initialize({
     hash: true,
     slideNumber: false,
-    transition: 'slide', 
+    transition: 'fade', 
     transitionSpeed: 'slow',
     backgroundTransition: 'fade',
     center: false,
     margin: 0.1,
     controls: false, // Cleaner without controls
     progress: true,
-    width: 1280,   // Force a wider layout
-    height: 720
+    width: 1400,   // Force a wider layout
+    height: 800
   });
 
   // Slider Logic for Before/After
@@ -527,15 +493,11 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
       const val = e.target.value;
       wrapper.style.width = val + '%';
     });
-    // Add logic to maintain after-image aspect ratio/width so it reveals correctly
     function updateSizes() {
       if(afterImage && wrapper) {
         afterImage.style.width = (100 / (wrapper.offsetWidth / wrapper.parentElement.offsetWidth)) + '%';
       }
     }
-    // Simple trick, wrapper has overflow hidden. img has width 200vw or something.
-    // Actually the easiest way in CSS is to use object-position or just set the img width to the parent width.
-    // The CSS img-after-wrapper and img-after handles it via absolute positioning.
   }
 
   setTimeout(() => {
@@ -547,7 +509,7 @@ html, body { background: var(--bg-color) !important; margin: 0; padding: 0; }
           labels: ['Labor', 'Logistics', 'Maintenance'],
           datasets: [{
             data: [800, 500, 300],
-            backgroundColor: ['#0A84FF', '#FF9F0A', '#32D74B'],
+            backgroundColor: ['#D4AF37', '#F9E596', '#8C7326'],
             borderWidth: 0,
             hoverOffset: 15
           }]
