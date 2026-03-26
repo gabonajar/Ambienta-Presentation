@@ -3,34 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ambienta Presentation</title>
+<title>Ambienta | Apple Aesthetic</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-:root { --accent-warm: #D4A373; --accent-dark: #344E41; --bg-main: #fcfbf9; }
-body, .reveal { font-family: 'Lato', sans-serif; background: var(--bg-main); color: #333; }
-.reveal h1, .reveal h2, .reveal h3 { font-family: 'Playfair Display', serif; color: var(--accent-dark); text-transform: none; }
-.text-accent { color: var(--accent-warm); }
-.text-dark { color: var(--accent-dark); }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; }
-.card img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; }
-.card h4 { margin: 0 0 10px 0; font-size: 1.2rem; }
-.card p { font-size: 0.9rem; color: #555; margin: 0; line-height: 1.3}
-.icon-large { font-size: 3rem; color: var(--accent-warm); margin-bottom: 20px; }
-.stat-huge { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 700; color: var(--accent-warm); line-height: 1; }
-ul.custom { list-style: none; padding: 0; text-align: left; }
-ul.custom li { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: start; gap: 15px; }
-ul.custom li i { color: var(--accent-warm); margin-top: 5px; }
-.bg-dark { background: var(--accent-dark); color: white; border-radius: 15px; padding: 2rem; }
-.bg-dark p, .bg-dark h3 { color: white; }
-.bg-image { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; z-index: -1; opacity: 0.15;}
+/* Apple Presentation Dark Mode Aesthetics */
+:root { 
+  --bg-color: #000000;
+  --card-bg: #1c1c1e;
+  --text-main: #f5f5f7;
+  --text-muted: #86868b;
+  --accent-blue: #2997ff;
+  --accent-green: #30d158;
+  --accent-orange: #ff9f0a;
+}
+body, .reveal { 
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color); 
+  color: var(--text-main); 
+  -webkit-font-smoothing: antialiased;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: none;
+  margin: 0;
+  color: var(--text-main);
+}
+.reveal h1 { font-size: 5.5rem; letter-spacing: -0.05em; line-height: 1.1; font-weight: 800;}
+.reveal h2 { font-size: 3.5rem; margin-bottom: 40px; }
+.reveal p { font-size: 1.2rem; color: var(--text-muted); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em;}
+
+/* Layouts */
+.center-flex { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100vh; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; text-align: left;}
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+/* Apple Style Cards */
+.apple-card { 
+  background: var(--card-bg); 
+  border-radius: 24px; 
+  padding: 30px; 
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+}
+.apple-card:hover { transform: scale(1.02); }
+.apple-card h4 { font-size: 1.5rem; margin-bottom: 10px;}
+.apple-card p { font-size: 1rem; margin: 0;}
+.icon-container { font-size: 2.5rem; margin-bottom: 20px; display: inline-block;}
+
+/* Gradients & Text Effects */
+.gradient-text {
+  background: linear-gradient(90deg, #ff9f0a, #ff375f, #bf5af2, #0a84ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.gradient-text-green {
+  background: linear-gradient(90deg, #30d158, #30b0c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Huge Stats */
+.stat-huge { font-size: 4rem; font-weight: 800; line-height: 1; letter-spacing: -0.05em; margin-bottom: 10px; color: var(--text-main);}
+.stat-label { font-size: 1.1rem; color: var(--text-muted); font-weight: 500;}
+
+/* Validation Iteration Boxes */
+.iteration-row { display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.iteration-item { background: var(--card-bg); border-radius: 18px; padding: 25px; display: flex; align-items: center; gap: 25px; border: 1px solid #333;}
+.it-num { background: rgba(255,255,255,0.1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: white;}
+.it-content h4 { font-size: 1.3rem; margin-bottom: 5px; color: var(--text-main);}
+.it-content p { font-size: 1rem; margin: 0; color: var(--text-muted);}
+
+/* P&L Table - Dark Mode */
+.fin-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.fin-table th { border-bottom: 1px solid #333; padding: 15px 10px; text-align: right; color: var(--text-muted); font-weight: 500;}
+.fin-table td { border-bottom: 1px solid #222; padding: 15px 10px; text-align: right; color: var(--text-main); font-weight: 600;}
+.fin-table th:first-child, .fin-table td:first-child { text-align: left; }
+.fin-table .highlight { background: rgba(255,255,255,0.03); }
+.fin-table .profit { color: var(--accent-green); }
+
+/* Ambient Glows */
+.glow-blue { position: absolute; width: 600px; height: 600px; background: rgba(10, 132, 255, 0.15); border-radius: 50%; filter: blur(100px); top: -200px; right: -200px; z-index: -1; pointer-events: none;}
+.glow-orange { position: absolute; width: 500px; height: 500px; background: rgba(255, 159, 10, 0.15); border-radius: 50%; filter: blur(100px); bottom: -100px; left: -200px; z-index: -1; pointer-events: none;}
+
+/* Before/After Custom */
+.ba-container { width: 100%; height: 60vh; position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.8);}
+.ba-img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; transition: opacity 2s ease; }
+.ba-label { position: absolute; bottom: 30px; left: 30px; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); padding: 10px 20px; border-radius: 30px; font-weight: 600; font-size: 1rem; color: white; border: 1px solid rgba(255,255,255,0.1);}
+
+/* Custom Reveal.js Overrides */
+.reveal .progress { height: 4px; color: var(--accent-blue); }
+.reveal .controls { color: rgba(255,255,255,0.3); }
+.reveal .slides section { padding: 40px !important; }
+
+/* Image Frame */
+.image-frame { border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,0.5);}
 </style>
 </head>
 <body>
@@ -39,215 +116,400 @@ ul.custom li i { color: var(--accent-warm); margin-top: 5px; }
 
     <!-- 1. Intro -->
     <section>
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&w=1920" class="bg-image">
-      <h1 style="font-size: 5rem; letter-spacing: 2px;"><i class="fa-solid fa-leaf text-accent"></i> Ambienta</h1>
-      <h3 style="font-style: italic;">Where spaces become experiences.</h3>
+      <div class="glow-blue"></div>
+      <div class="glow-orange"></div>
+      <div class="center-flex">
+        <h1 class="gradient-text" style="font-size: 7rem; margin-bottom: 20px;">Ambienta.</h1>
+        <h2 style="font-size: 2.5rem; color: var(--text-main); font-weight: 600; margin-bottom: 20px;">Where spaces<br>become experiences.</h2>
+        <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto;">Transforming professional environments<br>with sustainable, full-service decoration.</p>
+      </div>
     </section>
 
-    <!-- 2. Hook -->
+    <!-- 2. Before / After -->
     <section>
-      <div class="grid-2">
-        <div style="text-align: left;">
-          <span class="stat-huge">94%</span>
-          <h3 style="margin-top:20px;">Of first impressions relate to design & atmosphere.</h3>
-          <p>Ambienta is the bridge between space and emotion, tying marketing to experience creation.</p>
-        </div>
-        <div>
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&w=600" style="border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+      <h2 style="text-align: left; margin-bottom: 10px;">The Transformation.</h2>
+      <p style="text-align: left; margin-bottom: 40px; font-size: 1.4rem;">From sterile and cold, to warm and memorable.</p>
+      <div class="ba-container">
+        <!-- Before -->
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&w=1920" class="ba-img">
+        <div class="ba-label">BEFORE: Functional, impersonal.</div>
+        
+        <!-- After (fade in) -->
+        <div class="fragment fade-in-then-semi-out" style="position:absolute; width:100%; height:100%;">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745a872f?auto=format&w=1920" class="ba-img">
+          <div class="ba-label" style="background: rgba(48, 209, 88, 0.8);">AFTER: Engaging and premium.</div>
         </div>
       </div>
     </section>
 
     <!-- 3. Problem -->
     <section>
-      <h2>The Problem</h2>
-      <p style="color:#666; font-size:1.1rem; margin-bottom:40px;">Professional spaces are functional, but lack warmth and emotion.</p>
+      <h2 style="text-align: left; margin-bottom: 10px;">The Problem.</h2>
+      <p style="text-align: left; margin-bottom: 50px; font-size: 1.4rem;">Professional spaces lack emotion. Managing them is a burden.</p>
       <div class="grid-3">
-        <div class="card fragment fade-up">
-          <i class="fa-solid fa-snowflake icon-large"></i>
-          <h4>Cold & Impersonal</h4>
-          <p>Standard design feels heavy, sterile, and emotionally distant to visitors.</p>
+        <div class="apple-card fragment slide-up">
+          <div class="icon-container" style="color: #ff3b30;"><i class="fa-regular fa-snowflake"></i></div>
+          <h4>Cold Spaces</h4>
+          <p>Standard functional design feels heavy, sterile, and distant to visitors.</p>
         </div>
-        <div class="card fragment fade-up" data-fragment-index="1">
-          <i class="fa-solid fa-boxes-stacked icon-large"></i>
+        <div class="apple-card fragment slide-up" data-fragment-index="1">
+          <div class="icon-container" style="color: #ff9f0a;"><i class="fa-solid fa-boxes-stacked"></i></div>
           <h4>Operational Burden</h4>
-          <p>Decorating requires time, storage space, and creativity teams don't have.</p>
+          <p>Decorating requires time, deep storage, and specialized creative teams.</p>
         </div>
-        <div class="card fragment fade-up" data-fragment-index="2">
-          <i class="fa-solid fa-trash-can icon-large"></i>
+        <div class="apple-card fragment slide-up" data-fragment-index="2">
+          <div class="icon-container" style="color: #ff375f;"><i class="fa-solid fa-trash-can"></i></div>
           <h4>Material Waste</h4>
-          <p>Decorations are bought once, forgotten, and discarded.</p>
+          <p>Decorations are bought once, forgotten, and ultimately discarded to landfills.</p>
         </div>
       </div>
     </section>
 
     <!-- 4. Solution -->
     <section>
-      <h2>The Solution</h2>
-      <p style="font-size: 1.2rem; font-weight:700;">Professional decorative transformations without the complexity.</p>
-      <div class="grid-3" style="margin-top:40px;">
-        <div class="fragment" style="text-align:center;">
-          <i class="fa-solid fa-palette icon-large text-dark"></i>
-          <h4 class="text-dark">Creative Design</h4>
-          <p style="font-size:0.9rem;">Thematic & seasonal spatial rotations.</p>
+      <h2 style="text-align: left; margin-bottom: 10px;">The Solution.</h2>
+      <p style="text-align: left; margin-bottom: 50px; font-size: 1.4rem;">Professional decorative transformations without the complexity.</p>
+      
+      <div class="grid-3">
+        <div class="apple-card fragment">
+          <div class="icon-container" style="color: var(--accent-blue);"><i class="fa-solid fa-palette"></i></div>
+          <h4 style="font-size: 1.8rem; margin-bottom: 15px;">Creative Design.</h4>
+          <p style="font-size: 1.1rem;">Thematic and seasonal spatial rotations designed specifically for your brand.</p>
         </div>
-        <div class="fragment" style="text-align:center;">
-          <i class="fa-solid fa-truck-ramp-box icon-large text-dark"></i>
-          <h4 class="text-dark">Full Service</h4>
-          <p style="font-size:0.9rem;">We handle installation, logistics & storage.</p>
+        <div class="apple-card fragment">
+          <div class="icon-container" style="color: #bf5af2;"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <h4 style="font-size: 1.8rem; margin-bottom: 15px;">Full Service.</h4>
+          <p style="font-size: 1.1rem;">We handle the installation, logistics, setup, and year-round storage.</p>
         </div>
-        <div class="fragment" style="text-align:center;">
-          <i class="fa-solid fa-leaf icon-large text-dark"></i>
-          <h4 class="text-dark">Circular Economy</h4>
-          <p style="font-size:0.9rem;">Sustainable reuse of high-level decorative assets.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Demographics -->
-    <section>
-      <h2>Customer Segments</h2>
-      <p style="font-style:italic;">"They all want to make people feel at home — but lack time, ideas, or storage."</p>
-      <div class="grid-4" style="margin-top:20px;">
-        <div class="card fragment">
-          <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&w=400">
-          <span style="background:var(--accent-warm); color:white; padding:2px 10px; border-radius:15px; font-size:0.7rem;">Hospitality</span>
-          <h4>Helen</h4>
-          <p>Needs memorable guest experiences.</p>
-        </div>
-        <div class="card fragment">
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&w=400">
-          <span style="background:var(--accent-warm); color:white; padding:2px 10px; border-radius:15px; font-size:0.7rem;">Corporate</span>
-          <h4>Carlos</h4>
-          <p>Wants better employee culture & wellbeing.</p>
-        </div>
-        <div class="card fragment">
-          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&w=400">
-          <span style="background:var(--accent-warm); color:white; padding:2px 10px; border-radius:15px; font-size:0.7rem;">Retail</span>
-          <h4>Rosa</h4>
-          <p>Managing window visuals takes too much time.</p>
-        </div>
-        <div class="card fragment">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&w=400">
-          <span style="background:var(--accent-warm); color:white; padding:2px 10px; border-radius:15px; font-size:0.7rem;">Healthcare</span>
-          <h4>Hugo</h4>
-          <p>Needs to lift heavy & intense hospital atmospheres.</p>
+        <div class="apple-card fragment">
+          <div class="icon-container" style="color: var(--accent-green);"><i class="fa-solid fa-leaf"></i></div>
+          <h4 style="font-size: 1.8rem; margin-bottom: 15px;">Circular Economy.</h4>
+          <p style="font-size: 1.1rem;">Sustainable reuse of high-level decorative assets across our network.</p>
         </div>
       </div>
     </section>
 
-    <!-- 6. Revenue Model -->
+    <!-- 5. Value Proposition Statement -->
     <section>
-      <h2>Revenue Model</h2>
-      <div class="grid-2">
-        <div class="bg-dark text-left fragment">
-          <h3 style="margin:0;">No Subscriptions</h3>
-          <p style="font-size:1.1rem;">Clients pay purely for the size of the transformation.</p>
-          <hr style="border-color:#555; margin:30px 0;">
-          <div style="display:flex; align-items:baseline; gap:10px;">
-            <span class="stat-huge" style="font-size:4rem; color:var(--accent-warm);">€35</span>
-            <span style="font-size:1.2rem; color:#aaa;">/ sqm</span>
-          </div>
-          <p style="color:var(--accent-warm); margin-top:10px;">Example: 250m² Lobby = €8,750</p>
+      <div class="center-flex">
+        <h1 style="font-size: 3.5rem; line-height: 1.2; text-align:center; max-width: 900px; letter-spacing: -0.03em;">
+          "For businesses that want to create welcoming environments, Ambienta provides <span class="gradient-text">professional seasonal decoration</span> designed to transform everyday spaces."
+        </h1>
+      </div>
+    </section>
+
+    <!-- 6. Ideation / Quotes -->
+    <section>
+      <div class="glow-blue"></div>
+      <h2 style="text-align: left; margin-bottom: 50px;">Ideation to Market Fit.</h2>
+      <div class="apple-card" style="padding: 60px; text-align: center; max-width: 800px; margin: 0 auto; background: rgba(28, 28, 30, 0.6); backdrop-filter: blur(20px);">
+        <p style="font-size: 2rem; color: var(--text-main); line-height: 1.4; font-weight: 500;">
+          "The idea came from a personal experience — walking into a hospital, office, or hotel lobby and feeling like <span style="color: var(--accent-orange);">the space had no personality.</span> It works, but it doesn't feel welcoming."
+        </p>
+        <div style="margin-top: 40px;">
+          <h4 style="margin:0; font-size: 1.2rem;">Ambienta Founding Team</h4>
+          <p style="color: var(--text-muted); font-size: 1rem;">Entrepreneurs & Innovators</p>
         </div>
+      </div>
+    </section>
+
+    <!-- 7. Final Idea Selection -->
+    <section>
+      <h2 style="text-align: left;">The Gap in the Market.</h2>
+      <div class="grid-2" style="margin-top: 40px;">
         <div>
-          <ul class="custom">
-            <li class="fragment"><i class="fa-solid fa-layer-group"></i> <div><strong>Core Services</strong><br><span style="font-size:0.8rem; color:#666;">Design, installation, removal & storage.</span></div></li>
-            <li class="fragment"><i class="fa-solid fa-hammer"></i> <div><strong>Custom Concepts</strong><br><span style="font-size:0.8rem; color:#666;">Bespoke brand-specific setups (€500-€1500).</span></div></li>
-            <li class="fragment"><i class="fa-solid fa-champagne-glasses"></i> <div><strong>Special Events</strong><br><span style="font-size:0.8rem; color:#666;">One-off experiential transformations.</span></div></li>
-          </ul>
+          <h1 class="gradient-text" style="font-size: 4rem; margin-bottom: 20px;">Why it works.</h1>
+          <p style="font-size: 1.3rem; margin-bottom: 20px;">We moved past freelance aggregators and B2C boxes to zero in on the true operational pain point for scaleable B2B businesses.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <div class="apple-card fragment"><h4 style="margin:0;"><i class="fa-solid fa-check" style="color:var(--accent-green); margin-right:15px;"></i> The Problem is Real</h4></div>
+          <div class="apple-card fragment"><h4 style="margin:0;"><i class="fa-solid fa-check" style="color:var(--accent-green); margin-right:15px;"></i> Solid B2B Demand</h4></div>
+          <div class="apple-card fragment"><h4 style="margin:0;"><i class="fa-solid fa-check" style="color:var(--accent-green); margin-right:15px;"></i> Scalable Pricing</h4></div>
+          <div class="apple-card fragment"><h4 style="margin:0;"><i class="fa-solid fa-check" style="color:var(--accent-green); margin-right:15px;"></i> Zero Direct Competitors</h4></div>
         </div>
       </div>
     </section>
 
-    <!-- 7. Cost Drivers & Financials -->
+    <!-- 8. Validation Methods (LinkedIn / Forms / Screenshot Placeholder) -->
     <section>
-      <h2>Cost Structure & Growth</h2>
+      <h2 style="text-align: left;">Validation Methods.</h2>
       <div class="grid-2">
-        <div class="card">
-          <h4>COGS (Direct Costs)</h4>
-          <div style="height:250px; width:100%;"><canvas id="costChart"></canvas></div>
-          <p style="text-align:center; font-size:0.8rem; margin-top:10px;">Average: €1,600 / project</p>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div class="apple-card fragment fade-up">
+            <h4 style="font-size: 1.8rem; margin-bottom: 10px;"><i class="fa-brands fa-linkedin" style="color:#0a66c2;"></i> LinkedIn Outreach</h4>
+            <p>Direct messaging to professionals in target industries (hotels, offices, hospitals) to validate exact pain points.</p>
+          </div>
+          <div class="apple-card fragment fade-up" data-fragment-index="1">
+            <h4 style="font-size: 1.8rem; margin-bottom: 10px;"><i class="fa-brands fa-google" style="color:#34a853;"></i> Google Forms</h4>
+            <p>Structured questionnaires collecting quantitative data on budget ranges and core service preferences.</p>
+          </div>
         </div>
-        <div class="card">
-          <h4>Projected Monthly Revenue</h4>
-          <div style="height:250px; width:100%;"><canvas id="revenueChart"></canvas></div>
-          <p style="text-align:center; font-size:0.8rem; margin-top:10px; color:var(--accent-dark); font-weight:bold;">Break-even: ~1.54 projects/month</p>
+        <!-- User's LinkedIn Screenshot -->
+        <div class="fragment fade-left image-frame" style="display:flex; align-items:center; justify-content:center; background:#111;">
+          <img src="linkedin-evidence.png" alt="LinkedIn Evidence Screenshot" style="width: 100%; object-fit: contain;">
         </div>
       </div>
     </section>
 
-    <!-- 8. Validation -->
+    <!-- 9. Survey Results -->
     <section>
-      <h2>Market Validation</h2>
-      <p style="font-size:1.1rem; color:#666;">Surveys from Office & Hotel Managers</p>
+      <h2 style="text-align: left;">Key Insights.</h2>
       <div class="grid-2">
-        <div style="text-align:left;">
-          <ul class="custom">
-            <li class="fragment"><i class="fa-solid fa-magnifying-glass-chart"></i> <div><strong>Current Satisfaction: 2.4 / 5</strong><br><span style="font-size:0.8rem; color:#666;">Mostly handled by generic admin staff.</span></div></li>
-            <li class="fragment"><i class="fa-solid fa-arrow-right-arrow-left"></i> <div><strong>Open to Outsourcing: 75%</strong><br><span style="font-size:0.8rem; color:#666;">Would hand off entirely to a full-service provider.</span></div></li>
-            <li class="fragment"><i class="fa-solid fa-earth-europe"></i> <div><strong>Sustainability Matters</strong><br><span style="font-size:0.8rem; color:#666;">High priority response led to keeping circular reuse.</span></div></li>
-          </ul>
+        <div style="display:flex; flex-wrap:wrap; gap:15px;">
+          <div class="apple-card" style="width: 100%; display:flex; align-items:center; gap:30px; padding:20px 30px;">
+             <div class="stat-huge" style="margin:0; width:120px;">75%</div>
+             <div class="stat-label">Spaces currently decorated</div>
+          </div>
+          <div class="apple-card" style="width: 100%; display:flex; align-items:center; gap:30px; padding:20px 30px;">
+             <div class="stat-huge" style="margin:0; width:120px; color:#ff3b30;">2.4</div>
+             <div class="stat-label">Stagnant satisfaction (out of 5)</div>
+          </div>
+          <div class="apple-card" style="width: 100%; display:flex; align-items:center; gap:30px; padding:20px 30px;">
+             <div class="stat-huge" style="margin:0; width:120px; color:var(--accent-blue);">83%</div>
+             <div class="stat-label">Want more variety & professionalism</div>
+          </div>
+          <div class="apple-card" style="width: 100%; display:flex; align-items:center; gap:30px; padding:20px 30px;">
+             <div class="stat-huge" style="margin:0; width:120px; color:var(--accent-green);">83%</div>
+             <div class="stat-label">Rate sustainability as highly important</div>
+          </div>
         </div>
-        <div class="bg-dark text-left fragment fade-left">
-          <h3 style="font-size:1.5rem; margin-bottom:15px; color:var(--accent-warm);">Key Iteration Pivot</h3>
-          <p>We dropped the fixed annual subscription model entirely.</p>
-          <p style="color:#aaa; font-size:0.9rem;">Clients wanted a lower-risk entry point. The 'Per Square Meter' approach enables scalable, transparent entry with high retention.</p>
+        
+        <div class="apple-card" style="background: rgba(255,255,255,0.03);">
+          <h4 style="font-size: 2rem; margin-bottom: 30px;">The Data Told Us:</h4>
+          
+          <div style="margin-bottom: 25px;">
+            <h4 style="color:var(--text-main); font-size:1.3rem; margin-bottom:5px;">Time Constraints</h4>
+            <p>Professionals lack the time to execute seasonal decorations.</p>
+          </div>
+          <div style="margin-bottom: 25px;">
+            <h4 style="color:var(--text-main); font-size:1.3rem; margin-bottom:5px;">Storage Limitations</h4>
+            <p>Businesses cannot adequately store materials between seasons.</p>
+          </div>
+          <div style="margin-bottom: 25px;">
+            <h4 style="color:var(--accent-green); font-size:1.3rem; margin-bottom:5px;">Sustainability Matters</h4>
+            <p>Environmental consciousness is a primary decision factor.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 9. Risks & Mitigation -->
+    <!-- 10. Validation Driven Iterations -->
     <section>
-      <h2>Risks & Mitigation</h2>
-      <div class="grid-2 text-left">
-        <div class="fragment card">
-          <h4 class="text-dark"><i class="fa-solid fa-box-open text-accent"></i> Inventory Damage</h4>
-          <p><strong>Fix:</strong> Asset tracking systems & dedicated maintenance replacement budgets built into margins.</p>
+      <h2 style="text-align: left; margin-bottom: 10px;">Driven by Data.</h2>
+      <p style="text-align: left; margin-bottom: 40px; font-size: 1.4rem;">Three key changes to our original concept.</p>
+      
+      <div class="iteration-row">
+        <!-- Iteration 1 -->
+        <div class="iteration-item fragment slide-up">
+          <div class="it-num">1</div>
+          <div style="flex:1;">
+            <h4 style="color:var(--accent-blue);">Pricing Flexibility</h4>
+            <p>Moved away from a fixed annual subscription model.</p>
+          </div>
+          <div style="color:var(--text-muted); padding:0 20px;"><i class="fa-solid fa-arrow-right"></i></div>
+          <div style="flex:1;">
+            <h4 style="color:var(--text-main);">Per-SQM Pricing</h4>
+            <p>Became the core structure with long-term contracts acting as an option.</p>
+          </div>
         </div>
-        <div class="fragment card">
-          <h4 class="text-dark"><i class="fa-solid fa-calendar-check text-accent"></i> Peak Season Overload</h4>
-          <p><strong>Fix:</strong> Pre-scheduling core holidays months in advance & maintaining a strong freelance installer network.</p>
+
+        <!-- Iteration 2 -->
+        <div class="iteration-item fragment slide-up" data-fragment-index="1">
+          <div class="it-num">2</div>
+          <div style="flex:1;">
+            <h4 style="color:var(--accent-green);">Sustainability Focus</h4>
+            <p>Gave circular ecosystems a much more prominent place.</p>
+          </div>
+          <div style="color:var(--text-muted); padding:0 20px;"><i class="fa-solid fa-arrow-right"></i></div>
+          <div style="flex:1;">
+            <h4 style="color:var(--text-main);">Core Selling Point</h4>
+            <p>Reuse became a primary value driver, not just a footnote.</p>
+          </div>
         </div>
-        <div class="fragment card">
-          <h4 class="text-dark"><i class="fa-solid fa-user-group text-accent"></i> Early Acquisition</h4>
-          <p><strong>Fix:</strong> Focus heavily on securing 2-3 anchor clients initially to establish credibility & case studies.</p>
-        </div>
-        <div class="fragment card">
-          <h4 class="text-dark"><i class="fa-solid fa-building text-accent"></i> In-House Teams</h4>
-          <p><strong>Fix:</strong> Emphasize our full-service convenience (design + storage), highly out-competing internal DIY costs.</p>
+
+        <!-- Iteration 3 -->
+        <div class="iteration-item fragment slide-up" data-fragment-index="2">
+          <div class="it-num">3</div>
+          <div style="flex:1;">
+            <h4 style="color:var(--accent-orange);">Custom Onboarding</h4>
+            <p>Resolved the concern of receiving "generic" setups.</p>
+          </div>
+          <div style="color:var(--text-muted); padding:0 20px;"><i class="fa-solid fa-arrow-right"></i></div>
+          <div style="flex:1;">
+            <h4 style="color:var(--text-main);">Built-In Service</h4>
+            <p>A deep-dive understanding of client brand became the first step.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 10. SWOT -->
+    <!-- 11. Customer Segments -->
     <section>
-      <h2>SWOT Analysis</h2>
+      <h2 style="text-align: left;">Target Demographics.</h2>
+      <div class="grid-4" style="margin-top: 40px;">
+        <div class="apple-card fragment">
+          <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&w=400" style="width:100%; border-radius:12px; margin-bottom:15px; height: 120px; object-fit: cover;">
+          <h4 style="color:var(--accent-blue);">Hospitality</h4>
+          <p style="font-size:0.9rem;">Hotels tracking visitor engagement and premium experience.</p>
+        </div>
+        <div class="apple-card fragment">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&w=400" style="width:100%; border-radius:12px; margin-bottom:15px; height: 120px; object-fit: cover;">
+          <h4 style="color:var(--accent-green);">Healthcare</h4>
+          <p style="font-size:0.9rem;">Hospitals lifting heavy atmospheres to calm patients.</p>
+        </div>
+        <div class="apple-card fragment">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&w=400" style="width:100%; border-radius:12px; margin-bottom:15px; height: 120px; object-fit: cover;">
+          <h4 style="color:var(--accent-orange);">Corporate</h4>
+          <p style="font-size:0.9rem;">Offices enhancing employee culture & productivity.</p>
+        </div>
+        <div class="apple-card fragment">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&w=400" style="width:100%; border-radius:12px; margin-bottom:15px; height: 120px; object-fit: cover;">
+          <h4 style="color:#bf5af2;">Education</h4>
+          <p style="font-size:0.9rem;">Universities requiring flexible sets for graduations/events.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Revenue Model -->
+    <section>
       <div class="grid-2">
-        <div class="card" style="border-top: 4px solid var(--accent-dark);">
-          <h4 class="text-dark">Strengths</h4>
-          <p>Scalable sqm pricing. Fully managed. Reusable material efficiency.</p>
+        <div class="center-flex" style="align-items: flex-start; height: auto;">
+          <h2 style="text-align: left; margin-bottom: 20px;">The Engine.</h2>
+          <p style="text-align: left; font-size: 1.3rem; margin-bottom: 40px;">Transparent, scalable pricing based purely on footprints.</p>
+          <div class="apple-card" style="background:var(--bg-color); border:2px solid var(--accent-blue);">
+            <div class="stat-huge" style="color:var(--accent-blue);">€35 <span style="font-size:1.5rem; color:var(--text-muted);">/ sqm</span></div>
+            <p style="color:var(--text-main);">Clients only pay for the exact space transformed.</p>
+          </div>
         </div>
-        <div class="card" style="border-top: 4px solid var(--accent-warm);">
-          <h4 class="text-accent">Weaknesses</h4>
-          <p>High initial inventory & storage facility investment.</p>
-        </div>
-        <div class="card" style="border-top: 4px solid #A3B18A;">
-          <h4 style="color:#A3B18A;">Opportunities</h4>
-          <p>Geographic franchise expansion. Adding event-furniture verticals.</p>
-        </div>
-        <div class="card" style="border-top: 4px solid #bc4749;">
-          <h4 style="color:#bc4749;">Threats</h4>
-          <p>Traditional interior decorators. Cap-ex reductions during downturns.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="apple-card fragment fade-up">
+            <h4 style="color:var(--text-main);"><i class="fa-solid fa-layer-group" style="margin-right:10px; color:var(--text-muted);"></i> Core Services</h4>
+            <p>Design, installation, removal & storage priced cleanly.</p>
+          </div>
+          <div class="apple-card fragment fade-up">
+            <h4 style="color:var(--text-main);"><i class="fa-solid fa-hammer" style="margin-right:10px; color:var(--text-muted);"></i> Custom Setup</h4>
+            <p>Bespoke installations yielding €500-€1500 additional margins.</p>
+          </div>
+          <div class="apple-card fragment fade-up">
+            <h4 style="color:var(--text-main);"><i class="fa-solid fa-sync" style="margin-right:10px; color:var(--text-muted);"></i> Continual Revenue</h4>
+            <p>Seasonal recurrence stabilizes long-term predictable cash flow.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 11. End -->
+    <!-- 13. Financial Assumptions -->
     <section>
-      <img src="https://images.unsplash.com/photo-1542314831-c6a4d14eff43?auto=format&w=1920" class="bg-image">
-      <h1 style="font-size: 5rem; letter-spacing: 2px;"><i class="fa-solid fa-leaf text-accent"></i> Ambienta</h1>
-      <h3 style="font-style: italic;">Where spaces become experiences.</h3>
+      <h2 style="text-align: left;">Financial Projections.</h2>
+      <div class="grid-2" style="font-size: 1rem; align-items: start;">
+        
+        <div class="apple-card fragment">
+          <h4 style="font-size:1.5rem; margin-bottom:20px;">Project Economics</h4>
+          <table class="fin-table">
+            <tr><td>Average area size</td><td>250 m²</td></tr>
+            <tr><td>Price rate</td><td>€35 / m²</td></tr>
+            <tr><td>Core volume</td><td>€8,750</td></tr>
+            <tr><td>Add-on services</td><td>€1,000</td></tr>
+            <tr class="highlight"><td style="color:white; font-size:1.2rem;">Total per project</td><td style="color:white; font-size:1.2rem;">€9,750</td></tr>
+          </table>
+        </div>
+
+        <div class="apple-card fragment">
+          <h4 style="font-size:1.5rem; margin-bottom:20px;">3-Year Performance</h4>
+          <table class="fin-table">
+            <tr>
+              <th>Year</th>
+              <th>Revenue</th>
+              <th>COGS</th>
+              <th>OPEX</th>
+              <th>Profit</th>
+            </tr>
+            <tr><td>Year 1</td><td>€585k</td><td>€96k</td><td>€132k</td><td class="profit">€357k</td></tr>
+            <tr><td>Year 2</td><td>€819k</td><td>€134k</td><td>€182k</td><td class="profit">€502k</td></tr>
+            <tr><td>Year 3</td><td>€1.17M</td><td>€192k</td><td>€262k</td><td class="profit" style="font-size:1.2rem;">€716k</td></tr>
+          </table>
+          <p style="text-align:center; font-size:0.9rem; margin-top:20px; color:var(--text-muted);">Startup Capital Required: €65,000</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 14. Costs & Break Even -->
+    <section>
+      <div class="grid-2">
+        <div class="apple-card fragment">
+          <h4 style="text-align:center; margin-bottom:20px;">Unit COGS Ratio</h4>
+          <div style="height:250px; width:100%; position:relative;">
+            <canvas id="cogsChart"></canvas>
+            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center;">
+              <span style="font-size:1.5rem; font-weight:700;">€1.6k</span><br>
+              <span style="font-size:0.8rem; color:#888;">Total COGS</span>
+            </div>
+          </div>
+        </div>
+        <div class="apple-card center-flex fragment" style="height:auto; justify-content:center;">
+          <h4 style="font-size:2rem; margin-bottom:10px;">Monthly Break-Even</h4>
+          <p style="margin-bottom:30px;">Covering €11,000 fixed OPEX</p>
+          <h1 class="gradient-text" style="font-size: 6rem; margin:0; line-height:1;">1.5</h1>
+          <p style="font-size:1.2rem; font-weight:600; color:white; margin-top:10px;">Projects per month</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. SWOT -->
+    <section>
+      <h2 style="text-align: left;">SWOT Analysis.</h2>
+      <div class="grid-4" style="margin-top: 40px;">
+        <div class="apple-card">
+          <h4 class="gradient-text-green">Strengths</h4>
+          <p style="font-size:0.95rem; margin-top:10px;">Scalable sqm-pricing. Full-service logistical capability. Distinct sustainable circular model.</p>
+        </div>
+        <div class="apple-card">
+          <h4 style="color:#ff3b30;">Weaknesses</h4>
+          <p style="font-size:0.95rem; margin-top:10px;">High initial capital inventory expenditure. Significant reliance on transport logistics.</p>
+        </div>
+        <div class="apple-card">
+          <h4 style="color:var(--accent-blue);">Opportunities</h4>
+          <p style="font-size:0.95rem; margin-top:10px;">Booming demand for experience design. Strong expansion capabilities across national metros.</p>
+        </div>
+        <div class="apple-card">
+          <h4 style="color:#ff9f0a;">Threats</h4>
+          <p style="font-size:0.95rem; margin-top:10px;">Traditional interior designers pivoting. Severe macro corporate cap-ex reductions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. Risks -->
+    <section>
+      <h2 style="text-align: left;">Risk & Mitigation.</h2>
+      <div class="grid-2">
+        <div class="apple-card fragment slide-up">
+          <h4 style="margin-bottom:5px;"><i class="fa-solid fa-box-open" style="margin-right:10px;"></i> Inventory Damage</h4>
+          <p>Fixed via strict asset tracking and an embedded margin replacement budget.</p>
+        </div>
+        <div class="apple-card fragment slide-up" data-fragment-index="1">
+          <h4 style="margin-bottom:5px;"><i class="fa-solid fa-calendar-check" style="margin-right:10px;"></i> Peak Overload</h4>
+          <p>Fixed via highly staggered scheduling windows and a freelance scale network.</p>
+        </div>
+        <div class="apple-card fragment slide-up" data-fragment-index="2">
+          <h4 style="margin-bottom:5px;"><i class="fa-solid fa-user-group" style="margin-right:10px;"></i> Sluggish Acquisition</h4>
+          <p>Fixed by hunting 2-3 massive anchor clients to build instant credibility.</p>
+        </div>
+        <div class="apple-card fragment slide-up" data-fragment-index="3">
+          <h4 style="margin-bottom:5px;"><i class="fa-solid fa-building" style="margin-right:10px;"></i> Existing DIY Teams</h4>
+          <p>Fixed by emphasizing the complete obliteration of operational and storage burdens.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. End -->
+    <section>
+      <div class="center-flex">
+        <div class="glow-green" style="position: absolute; width: 500px; height: 500px; background: rgba(48, 209, 88, 0.2); border-radius: 50%; filter: blur(100px); z-index: -1;"></div>
+        <h1 class="gradient-text" style="font-size: 6rem; margin-bottom: 20px;">Ambienta.</h1>
+        <h3 style="font-size: 2rem; color: var(--text-muted); font-weight: 400;">Thank you.</h3>
+      </div>
     </section>
 
   </div>
@@ -257,42 +519,35 @@ ul.custom li i { color: var(--accent-warm); margin-top: 5px; }
 <script>
   Reveal.initialize({
     hash: true,
-    slideNumber: 'c/t',
-    transition: 'fade',
-    backgroundTransition: 'fade'
+    slideNumber: false,
+    transition: 'fade', 
+    backgroundTransition: 'fade',
+    center: false,
+    margin: 0.1,
+    controls: false, // Cleaner without controls
+    progress: true
   });
 
   setTimeout(() => {
-    const ctxCost = document.getElementById('costChart');
-    if(ctxCost) {
-      new Chart(ctxCost, {
+    const ctxCogs = document.getElementById('cogsChart');
+    if(ctxCogs) {
+      new Chart(ctxCogs, {
         type: 'doughnut',
         data: {
-          labels: ['Labor (€800)', 'Logistics (€500)', 'Maintenance (€300)'],
+          labels: ['Labor', 'Logistics', 'Maintenance'],
           datasets: [{
             data: [800, 500, 300],
-            backgroundColor: ['#344E41', '#D4A373', '#A3B18A'],
-            borderWidth: 0
+            backgroundColor: ['#2997ff', '#ff9f0a', '#30d158'],
+            borderWidth: 0,
+            hoverOffset: 10
           }]
         },
-        options: { responsive: true, maintainAspectRatio: false, plugins:{ legend:{position:'bottom'} }}
-      });
-    }
-
-    const ctxRev = document.getElementById('revenueChart');
-    if(ctxRev) {
-      new Chart(ctxRev, {
-        type: 'bar',
-        data: {
-          labels: ['Year 1', 'Year 2', 'Year 3'],
-          datasets: [{
-            label: 'Monthly Revenue (€)',
-            data: [43750, 61250, 87500],
-            backgroundColor: '#D4A373',
-            borderRadius: 5
-          }]
-        },
-        options: { responsive: true, maintainAspectRatio: false }
+        options: { 
+          responsive: true, 
+          maintainAspectRatio: false, 
+          plugins: { legend: { display: false } }, 
+          cutout: '80%'
+        }
       });
     }
   }, 1000);
